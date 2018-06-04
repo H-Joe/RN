@@ -83,8 +83,13 @@ _pushDetailVC(title, url) {
      }
    }
    _searchAction() {
-     const url = APIs.movie_search + `?count=${this.props.page}&q=${this.props.keyword}`;
-     this.props.getMovieListAction(url, true, false, false);
+     if (this.props.keyword) {
+      const url = APIs.movie_search + `?count=${this.props.page}&q=${this.props.keyword}`;
+      this.props.getMovieListAction(url, true, false, false);
+     }else{
+       this._onRefresh();
+     }
+
    }
    _onEndReached() {
      //上拉加载更多

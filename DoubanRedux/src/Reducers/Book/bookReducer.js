@@ -36,7 +36,7 @@ export const bookSearchKeywordReducer = (state={keyword:'ReactNative'}, action)=
     case actionType.BOOK_SEARCH_KEY_WORDS_CHANGE:
       return{
         ...state,
-        keyword: action.val
+        keyword: action.val ? action.val : 'ReactNative'
       }
       break;
     default:
