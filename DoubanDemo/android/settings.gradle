@@ -1,0 +1,3 @@
+rootProject.name = 'DoubanDemo'
+
+include ':app'
